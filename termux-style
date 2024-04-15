@@ -1,0 +1,29 @@
+function apply-termux-style {
+    if [ ! -e colors.properties ]; then
+        touch colors.properties
+    fi
+
+    if [ ! -e font.ttf ]; then
+        touch font.ttf
+    fi
+
+    cp -n {font.ttf,colors.properties} ~/.termux &>/dev/null
+    termux-reload-settings
+}
+
+function restore-termux-style {
+    if [ -e ~/.termux/colors.properties ]; then
+        cp ~/.termux/{font.ttf,colors.properties} .
+        rm -rf ~/.termux/{font.ttf,colors.properties}
+
+        if [ ! -s font.ttf ]; then
+            rm -rf font.ttf
+        fi
+
+        if [ ! -s colors.properties ]; then
+            rm -rf colors.properties
+        fi
+
+        termux-reload-settings
+    fi
+}

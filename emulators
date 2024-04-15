@@ -1,0 +1,52 @@
+#!/bin/bash
+
+. termux-style
+. dialogs
+apply-termux-style
+while true; do
+
+dialog_menu "CUSTOM WINE MOBOX" "" \
+"1" "wine-9.5-amd64-wow64" \
+"2" "Nombre del wine" \
+"3" "Nombre del wine" \
+"4" "Nombre del wine" \
+"5" "Nombre del wine" \
+"6" "Nombre del wine"
+case $? in
+1)
+	. ~/EmuScrips/wine-9.5-amd64-wow64.sh
+;;
+2)
+	. ~/EmuScrips/settings
+;;
+3)
+	. ~/EmuScrips/settings
+;;
+4)
+
+;;
+5)
+
+
+;;
+6)
+	dialog_msgbox "Patch notes" "\Z3Jan 15\Zn
+1. Added new wine-ge-custom-8-25
+2. Fixed OOM Adjuster
+3. Added WINE ESYNC for all users.
+4. Replaced winedevice.exe kill with all services kill
+5. Fixed VKD3D for Elden Ring
+\Z3Jan 18\Zn
+1. Added experimental media foundation codecs for 64 bit RE games, available in start menu
+2. Updated box builds, installed by default
+\Z3Jan 19\Zn
+1. Reverted boxes update...
+\Z3Not being implemented for now, planned\Zn
+dxvk settings in start menu, xinput"
+;;
+255)
+	break
+;;
+esac
+done
+restore-termux-style

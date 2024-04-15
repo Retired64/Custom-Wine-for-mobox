@@ -14,13 +14,13 @@ dialog_menu "CUSTOM WINE MOBOX" "" \
 "6" "Nombre del wine"
 case $? in
 1)
-	. ~/EmuScrips/wine-9.5-amd64-wow64.sh
+	. ~/Custom-Wine-for-mobox/wine-9.4-amd64.sh
 ;;
 2)
-	. ~/EmuScrips/settings
+	. ~/Custom-Wine-for-mobox/
 ;;
 3)
-	. ~/EmuScrips/settings
+	. ~/Custom-Wine-for-mobox/
 ;;
 4)
 

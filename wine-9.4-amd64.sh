@@ -21,7 +21,7 @@ if [ $? -eq 0 ]; then
     echo "Descarga exitosa. Descomprimiendo el archivo..."
     # Descomprimir el archivo
 read -p $'\e[32mNombre del Wine Mobox a Remplazar\e[0m' nombre_mobox
-    tar xfk wine-9.5-amd64-wow64.tar.xz -C $PREFIX/glibc/ --transform="s/wine-9.5-amd64-wow64/$nombre_mobox/"
+    tar xfk wine-9.4-amd64.tar.xz -C $PREFIX/glibc/ --transform="s/wine-9.4-amd64/$nombre_mobox/"
     echo "Descompresión completada."
 else
     echo "Error al descargar el archivo."

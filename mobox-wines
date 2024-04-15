@@ -1,0 +1,40 @@
+#!/bin/bash
+. ~/Custom-Wine-for-mobox/termux-style
+. ~/Custom-Wine-for-mobox/dialogs
+. ~/Custom-Wine-for-mobox/configs
+apply-termux-style
+while true; do
+load_configs
+dialog_menu "CUSTOM WINE MOBOX" "" \
+"1" "wine-9.4-amd64" \
+"2" "Nombre del wine" \
+"3" "Nombre del wine" \
+"4" "Nombre del wine" \
+"5" "Nombre del wine" \
+"6" "Nombre del wine"
+case $? in
+1)
+	. ~/Custom-Wine-for-mobox/wine-9.4-amd64.sh
+;;
+2)
+	. ~/Custom-Wine-for-mobox/
+;;
+3)
+	. ~/Custom-Wine-for-mobox/
+;;
+4)
+	. ~/Custom-Wine-for-mobox/
+;;
+5)
+	. ~/Custom-Wine-for-mobox/
+
+;;
+6)
+	. ~/Custom-Wine-for-mobox/
+;;
+255)
+	break
+;;
+esac
+done
+restore-termux-style
